@@ -1,5 +1,5 @@
-# Retrieve all COM ports and their descriptions
-$comPorts = Get-WmiObject Win32_SerialPort | Select-Object DeviceID, Description
+# Retrieve all COM ports and their descriptions using Get-CimInstance
+$comPorts = Get-CimInstance Win32_SerialPort | Select-Object DeviceID, Description
 
 # Display the COM ports and their descriptions in the console
 foreach ($port in $comPorts) {
